@@ -1,0 +1,18 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=A Prometheus exporter which scrapes remote JSON by JSONPath.
+Documentation=https://github.com/prometheus-community/json_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/json_exporter
+User=prometheus
+ExecStart=/usr/bin/json_exporter $JSON_EXPORTER_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+
+[Install]
+WantedBy=multi-user.target
