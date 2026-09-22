@@ -3,7 +3,7 @@
 %global group prometheus
 
 Name: json_exporter
-Version: 0.7.0
+Version: 0.8.0
 Release: 1%{?dist}
 Summary: A Prometheus exporter which scrapes remote JSON by JSONPath.
 License: ASL 2.0
@@ -57,5 +57,7 @@ exit 0
 %config(noreplace) %{_sysconfdir}/prometheus/%{name}.yaml
 
 %changelog
+* Tue Sep 22 2026 Ivan Garcia
+- Bump version to 0.8.0
 * Fri Apr 10 2026 Ivan Garcia <igarcia@cloudox.org> - 0.7.0
 - Initial packaging for the 0.7.0 branch
